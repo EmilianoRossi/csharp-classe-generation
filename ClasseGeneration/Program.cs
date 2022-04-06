@@ -40,3 +40,36 @@ void DecrementaAlunno()
     }
 
 }
+
+//------------ PROGRAMMA PRINCIPALE ----------------
+Console.WriteLine("Dimmi il tuo numero iniziale di alunni in aula");
+numeroPostiADisposizione = int.Parse(Console.ReadLine());
+
+
+while (true)
+{
+    Console.WriteLine("Vuoi aggiungere o rimuovere un alunno [aggiungi/rimuovi]?");
+    string risposta = Console.ReadLine();
+
+    switch (risposta)
+    {
+        case "aggiungi":
+            Console.WriteLine("Inserisci nome alunno");
+            string nomeAlunno = Console.ReadLine();
+            Console.WriteLine("Inserisci cognome alunno");
+            string cognomeAlunno = Console.ReadLine();
+            Console.WriteLine("Dimmi età dell'alunno: ");
+            int etàAlunno = int.Parse(Console.ReadLine());
+            AggiungiAlunno(nomeAlunno, cognomeAlunno, etàAlunno);
+            break;
+
+        case "rimuovi":
+            DecrementaAlunno();
+            Console.WriteLine("Ci dispiace ma non c'è piu posto in aula");
+            break;
+
+        default:
+            Console.WriteLine("Mi dispiace non è un opzione accettata");
+            break;
+    }
+}
