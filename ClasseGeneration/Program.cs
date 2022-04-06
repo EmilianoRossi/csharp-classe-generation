@@ -1,8 +1,9 @@
-﻿//ESERCIZIO CLASSE GENERATION
+﻿
+//ESERCIZIO CLASSE GENERATION
 
 //----------- VARIABILI GLOBALI --------------
 int numeroPostiADisposizione = 0;
-int massimoNumeriPosti = 5;
+int massimoNumeriPosti = 2;
 
 string[] nomeAlunni = new string[massimoNumeriPosti];
 string[] cognomeAlunni = new string[massimoNumeriPosti];
@@ -42,8 +43,6 @@ void DecrementaAlunno()
 }
 
 //------------ PROGRAMMA PRINCIPALE ----------------
-Console.WriteLine("Dimmi il tuo numero iniziale di alunni in aula");
-numeroPostiADisposizione = int.Parse(Console.ReadLine());
 
 
 while (true)
@@ -71,5 +70,11 @@ while (true)
         default:
             Console.WriteLine("Mi dispiace non è un opzione accettata");
             break;
+    }
+    for (int i = 0; i < massimoNumeriPosti; i++)
+    {
+        Console.Write(nomeAlunni[i] + "      ,      ");
+        Console.Write(cognomeAlunni[i] + "      ,      ");
+        Console.WriteLine(annoDiProduzione[i]);
     }
 }
