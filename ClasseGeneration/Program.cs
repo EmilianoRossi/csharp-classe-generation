@@ -26,3 +26,17 @@ void AggiungiAlunno(string nome, string cognome, int età)
     }
 
 }
+
+void DecrementaAlunno()
+{
+    if (massimoNumeriPosti == numeroPostiADisposizione)
+    {
+
+        numeroPostiADisposizione--;
+        nomeAlunni[massimoNumeriPosti - 1] = "";
+        cognomeAlunni[massimoNumeriPosti - 1] = "";
+        annoDiProduzione[massimoNumeriPosti - 1] = 0;
+
+    }
+
+}
