@@ -143,10 +143,3 @@ while (true)
     }
     
 }
-/*for (int i = 0; i < massimoNumeriPosti; i++)
-{
-    Console.Write(nomeAlunni[i] + "      ,      ");
-    Console.Write(cognomeAlunni[i] + "      ,      ");
-    Console.WriteLine(annoDiProduzione[i]);
-}
-*/
