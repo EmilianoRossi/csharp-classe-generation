@@ -61,12 +61,48 @@ void EtàMedia(int[] array)
 
 }
 
+
+//Calcolo età maggiore 
+
+int etàPiuGrande(int[] array)
+{
+    int j = 0;
+    int etàMaggiore = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if (etàMaggiore < array[i])
+        {
+            etàMaggiore = array[i];
+            j = i;
+        }
+    }
+    return j;
+}
+
+//Età piu piccolo
+//Calcolo età maggiore 
+
+int etàPiuPiccolo(int[] array)
+{
+    int j = 0;
+    int etàMaggiore = 400;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (etàMaggiore > array[i])
+        {
+            etàMaggiore = array[i];
+            j = i;
+        }
+    }
+    return j;
+}
+
 //------------ PROGRAMMA PRINCIPALE ----------------
 
 
 while (true)
 {
-    Console.WriteLine("Opzioni : aggiungi / rimuovi / media");
+    Console.WriteLine("Opzioni : aggiungi / rimuovi / media / grande / piccolo");
     string risposta = Console.ReadLine();
 
     switch (risposta)
@@ -90,6 +126,17 @@ while (true)
             EtàMedia(annoDiProduzione);
             break;
 
+        case "grande":
+            int indice = etàPiuGrande(annoDiProduzione);
+            Console.WriteLine("l'alunno piu grande è: " + nomeAlunni[indice] + " " + cognomeAlunni[indice] + "--" + annoDiProduzione[indice] + " anni" );
+            etàPiuGrande(annoDiProduzione);
+            break;
+
+        case "piccolo":
+            int indice2 = etàPiuPiccolo(annoDiProduzione);
+            Console.WriteLine("l'alunno piu piccolo è: " + nomeAlunni[indice2] + " " + cognomeAlunni[indice2] + "--" + annoDiProduzione[indice2] + " anni");
+            etàPiuGrande(annoDiProduzione);
+            break;
         default:
             Console.WriteLine("Mi dispiace non è un opzione accettata");
             break;
