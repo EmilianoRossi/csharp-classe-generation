@@ -1,4 +1,4 @@
-﻿//ESERCIZIO CLASSE GENERATION
+﻿//ESERCIZIO BONUS CLASSE GENERATION
 
 //----------- VARIABILI GLOBALI --------------
 int numeroPostiADisposizione = 0;
@@ -17,9 +17,6 @@ void AggiungiAlunno(string nome, string cognome, int età)
         nomeAlunni[numeroPostiADisposizione] = nome;
         cognomeAlunni[numeroPostiADisposizione] = cognome;
         annoDiProduzione[numeroPostiADisposizione] = età;
-        Console.Write(nomeAlunni[numeroPostiADisposizione] + " ");
-        Console.Write(cognomeAlunni[numeroPostiADisposizione] + " ");
-        Console.WriteLine(annoDiProduzione[numeroPostiADisposizione]);
         numeroPostiADisposizione++;
 
     }
@@ -44,29 +41,12 @@ void DecrementaAlunno()
 
 }
 
-//Funzione calcolo media
-void EtàMedia(int[] array)
-{
-
-    int sommaArray = 0;
-    int media = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-
-        sommaArray = sommaArray + (int)array[i];
-        media = sommaArray / massimoNumeriPosti;
-
-    }
-    Console.WriteLine("La media è: " + media);
-
-}
-
 //------------ PROGRAMMA PRINCIPALE ----------------
 
 
 while (true)
 {
-    Console.WriteLine("Opzioni : aggiungi / rimuovi / media");
+    Console.WriteLine("Vuoi aggiungere o rimuovere un alunno [aggiungi/rimuovi]?");
     string risposta = Console.ReadLine();
 
     switch (risposta)
@@ -86,20 +66,12 @@ while (true)
             Console.WriteLine("Ci dispiace ma non c'è piu posto in aula");
             break;
 
-        case "media":
-            EtàMedia(annoDiProduzione);
-            break;
-
         default:
             Console.WriteLine("Mi dispiace non è un opzione accettata");
             break;
     }
-    
+    for (int i = 0; i < massimoNumeriPosti; i++)
+    {
+        
+    }
 }
-/*for (int i = 0; i < massimoNumeriPosti; i++)
-{
-    Console.Write(nomeAlunni[i] + "      ,      ");
-    Console.Write(cognomeAlunni[i] + "      ,      ");
-    Console.WriteLine(annoDiProduzione[i]);
-}
-*/
